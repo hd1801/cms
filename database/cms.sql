@@ -146,3 +146,5 @@ add resetLink varchar(255) default '';
 
 alter table staff
 add resetLink varchar(255) default '';
+
+SET GLOBAL sql_mode = '';

@@ -651,7 +651,7 @@ exports.postStudentSettings = async (req, res, next) => {
     }
   }
   const sql2 =
-    "UPDATE STUDENT SET s_name = ?, gender = ?, dob = ?,email = ?, s_address = ?, contact = ?, password = ?, section = ?, dept_id = ? WHERE email = ?";
+    "UPDATE student SET s_name = ?, gender = ?, dob = ?,email = ?, s_address = ?, contact = ?, password = ?, section = ?, dept_id = ? WHERE email = ?";
   await queryParamPromise(sql2, [
     name,
     gender,
@@ -678,7 +678,7 @@ exports.getClass = async (req, res, next) => {
   for (const result of results) {
     const staffName = (
       await queryParamPromise(
-        "SELECT st_name FROM STAFF WHERE st_id = ?",
+        "SELECT st_name FROM staff WHERE st_id = ?",
         result.st_id
       )
     )[0].st_name;
