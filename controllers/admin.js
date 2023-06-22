@@ -531,7 +531,7 @@ exports.postAddStudent = async (req, res, next) => {
       section = results[0].section;
     }
   }
-  const sql2 = "INSERT INTO STUDENT SET ?";
+  const sql2 = "INSERT INTO student SET ?";
   await queryParamPromise(sql2, {
     s_id: uuidv4(),
     s_name: name,
@@ -608,7 +608,7 @@ exports.getAllStudent = async (req, res, next) => {
 // 3.4 Modify existing students
 exports.getStudentSettings = async (req, res, next) => {
   const studentEmail = req.params.id;
-  const sql1 = "SELECT * FROM STUDENT WHERE email = ?";
+  const sql1 = "SELECT * FROM student WHERE email = ?";
   const studentData = await queryParamPromise(sql1, [studentEmail]);
   const address = studentData[0].s_address.split("-");
   studentData[0].address = address;
