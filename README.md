@@ -1,6 +1,9 @@
+step 1 - start db using this command 
+    docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=cumsdbms -p 3306:3306 -d mysql:latest
+step 2 - npm i 
 
-* Create the database using following query in mysql : `CREATE DATABASE databasename;`
-* Create tables using the sql script file in `databse/cms.sql`;
-* To seed data in the database run to file in `seed` folder
-* To start the application execute `npm start`
+step 3 - copy cms.sql script and run it manually to create tables
+
+step 4 -  npm run start
+
 
