@@ -519,6 +519,7 @@ exports.postAddStudent = async (req, res, next) => {
     contact,
   } = req.body;
   const password = dob.toString().split("-").join("");
+  console.log(password);
   const hashedPassword = await hashing(password);
   const sql1 =
     "select count(*) as `count`, section from student where section = (select max(section) from student where dept_id = ?) AND dept_id = ?";
